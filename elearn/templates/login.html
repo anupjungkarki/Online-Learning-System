@@ -39,9 +39,9 @@
             <form action="{% url 'login' %}" method="POST">
               {% csrf_token %}
               <label class="text-white">Username</label><br>
-              <input type="text" name="username" required="Fill Username"><br>
+              <input type="text" name="username" required="Fill Username" style="background-color: white"><br>
               <label class="text-white">Password</label><br>
-              <input type="password" name="password" required="Fill Password"><br>
+              <input type="password" name="password" required="Fill Password" style="background-color: white"><br>
               <button>Sign in</button>
             </form>
             <div class="card-footer">
