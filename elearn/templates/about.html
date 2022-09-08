@@ -1,0 +1,56 @@
+{% include 'nav.html' %}
+
+{% load static %}
+
+
+<style type="text/css">
+  #bg{
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 100%;
+    }
+</style>
+
+
+<body id="bg"">
+<div class="container-fluid">
+<section class="about-us" id="about-us">
+<div class="container mt-5">
+<div class="row">
+  <div class="col-md-6">
+      <h1 class='text-success'>Welcome!</h1>
+      <h2>Know More About Us</h2>
+      <hr>
+      <p>This is Online Learning System, Django web based online learning management system developed by <strong>College Student</strong>, 
+        for the purpose of <strong>College Final project requirement</strong>.The main aim of Online Learning System is to <strong>provide knowledge to the student's</strong>
+        from different college and institutions across the country. For that purpose, student can register in different courses of their interest and learn from our expert team and instructor's.</p>
+      <a class="btn btn-success" href="{% url 'services' %}">Let's Know More</a>
+
+  </div>
+  <div class="col-md-4">
+      <img src="https://freepngimg.com/download/temp_png/9-2-education-png-file_400x400.png"alt="">
+  </div>
+</div>
+</div>
+</section>
+</div>
+
+
+    <script type="text/javascript" src="{% static 'js/jquery-2.1.3.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/bootstrap.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/jquery.dataTables.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/main.js' %}"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
