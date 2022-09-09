@@ -252,7 +252,7 @@ def acreate_profile(request):
         print(user_id)
 
         Profile.objects.filter(id=user_id).create(user_id=user_id, phonenumber=phonenumber, first_name=first_name,
-                                                  last_name=last_name, bio=bio, birth_date=birth_date, avatar=avatar, city=city, country=country)
+                                                  last_name=last_name, bio=bio, birth_date=birth_date, avatar=avatar,hobby=hobby, city=city, country=country)
         messages.success(request, 'Your Profile Was Created Successfully')
         return redirect('auser_profile')
     else:
@@ -285,7 +285,7 @@ def home_instructor(request):
 
 class QuizCreateView(CreateView):
     model = Quiz
-    fields = ('name', 'course')
+    fields = ('name', 'course',)
     template_name = 'dashboard/Instructor/quiz_add_form.html'
 
     def form_valid(self, form):
@@ -299,7 +299,7 @@ class QuizCreateView(CreateView):
 
 class QuizUpateView(UpdateView):
     model = Quiz
-    fields = ('name', 'course')
+    fields = ('name', 'course',)
     template_name = 'dashboard/instructor/quiz_change_form.html'
 
     def get_context_data(self, **kwargs):

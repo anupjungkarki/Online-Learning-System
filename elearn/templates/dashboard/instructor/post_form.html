@@ -1,51 +1,44 @@
 {% extends 'dashboard/instructor/base.html' %}
-
-
-
+{% load crispy_forms_tags %}
 {% block body %}
 
 <div class="container-fluid">
-<div class="row">
+    <div class="row">
+        <div class="col-sm-12" style="padding-top: 10px;">
+            <div class="mb-2">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="card col-sm-12" style="border:none;">
+                            <div class="card-header text-primary">
+                              <h5 class="text-center">Post New Announcement</h5>
+                            </div>
+                        </div>
 
-<div class="col-sm-6" style="padding-top: 10px;">
-    <div class="card">
-</div>
+                        <div class="col-sm-12">
+    	                <div class="myform">
+                            <form method="POST">
+                                {% csrf_token %}
+                                {{ form|crispy}}
+
+                                <br><input type="submit" value="Post" class="btn btn-primary">
+                            </form>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-4"></div>
+                    </div>
 
 
-<div class="card mb-2">
-<div class="card-body">
+                </div>
+            </div>
+        </div>
 
-<div class="row" style="background-color: #999965">
-	 <div class="card col-sm-12">
-  <div class="card-header text-primary">
-     <center>Post New Announcement</center>
-  </div>
-</div>
-
-    <div class="col-sm-8">
-    	<div class="myform">
-    	    <form method="POST">
-    	{% csrf_token %}
-    	{{ form.as_p }}
-
-    	<br><input type="submit" value="Post" class="btn btn-primary">
-    </form>
-</div>
-
-    <div class="col-sm-4"></div>
     </div>
 
 
-                      </div>
-                    </div>  
-                  </div>
 
-</div>
-
-
-
-<div class="col-sm-2" style="color: red">
-</div>
+    <div class="col-sm-2" style="color: red">
+    </div>
 
 </div>
 </div>
