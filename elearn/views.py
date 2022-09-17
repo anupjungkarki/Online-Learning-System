@@ -840,6 +840,7 @@ def homepage_admin(request):
 
 @login_required
 def chatroom(request, pk):
+    receiver_user = User.objects.get(pk=pk)
     other_user = get_object_or_404(User, pk=pk)
     messages = Msg.objects.filter(
         Q(receiver=request.user, sender=other_user)
@@ -847,7 +848,7 @@ def chatroom(request, pk):
     messages = messages | Msg.objects.filter(
         Q(receiver=other_user, sender=request.user))
     messages.update(seen=True)
-    return render(request, "dashboard/message/chatroom.html", {"other_user": other_user, 'users': User.objects.all(), "messages": messages})
+    return render(request, "dashboard/message/chatroom.html", {"other_user": other_user,'receiver_user': receiver_user, 'users': User.objects.all(), "messages": messages})
 
 
 @login_required
